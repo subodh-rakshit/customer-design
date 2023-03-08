@@ -1,7 +1,7 @@
 # Approach and Setup Guidelines
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-Also for styling, TailwindCSS is used which can be installed by going into `https://tailwindcss.com/docs/installation` website and following the steps.
+Also for styling and Responsiveness, TailwindCSS is used which can be installed by going into `https://tailwindcss.com/docs/installation` website and following the steps.
 
 ## Available Scripts
 
@@ -17,7 +17,7 @@ You will also see any lint errors in the console.
 
 ## Technologies Used
 
-The whole application is built with ReactJS for functionality and TailwindCSS for the styling.
+The whole application is built with ReactJS for functionality and TailwindCSS for the styling and making it responsive.
 
 ## Folder Structure
 
