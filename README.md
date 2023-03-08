@@ -7,6 +7,10 @@ Also for styling and Responsiveness, TailwindCSS is used which can be installed 
 
 In the project directory, you can run:
 
+### `npm install`
+
+Install all the libraries or dependencies used in building the application.
+
 ### `npm start`
 
 Runs the app in the development mode.\
