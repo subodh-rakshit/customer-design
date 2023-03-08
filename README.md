@@ -39,7 +39,7 @@ In `src/assets/graphql` folder we can find a file called queries.ts which contai
 
 ### `API Call`
 
-In this application, only one API call is generated and hence the file to retrieve the values is associated in `src/assets/api-call/customer-apicall.js`.
+In this application, only one API call is generated and hence the file to retrieve the values is associated in `src/api/customer-apicall.js`.
 
 ## Code Flow and Logic of Implementation
 

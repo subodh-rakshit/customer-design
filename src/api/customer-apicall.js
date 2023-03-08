@@ -1,6 +1,6 @@
 import { Amplify, API, graphqlOperation } from "aws-amplify";
-import awsconfig from "../aws-exports";
-import { ListZellerCustomers } from "../graphql/queries";
+import awsconfig from "../assets/aws-exports";
+import { ListZellerCustomers } from "../assets/graphql/queries";
 
 // Configuring the aws configuration file
 Amplify.configure(awsconfig);

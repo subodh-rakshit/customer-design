@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import customerApiResponse from "../assets/api-call/customer-apicall";
+import customerApiResponse from "../api/customer-apicall";
 
 // Declaring the type of a single user
 type DisplayUserType = {
