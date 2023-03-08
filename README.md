@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# Approach and Setup Guidelines
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Also for styling, TailwindCSS is used which can be installed by going into `https://tailwindcss.com/docs/installation` website and following the steps.
 
 ## Available Scripts
 
@@ -14,33 +15,47 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+## Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The whole application is built with ReactJS for functionality and TailwindCSS for the styling.
 
-### `npm run build`
+## Folder Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `src/assets`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This folder provides all the necessary files which needs to be used in our application
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `src/components`
 
-### `npm run eject`
+As the project is in a single page, all the components are available in this location.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### `AWS Configuration`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+In `src/assets` folder we can find a file called `aws-exports.js` which has the configuration for aws for the api used.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### `GraphQL Queries`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+In `src/assets/graphql` folder we can find a file called queries.ts which contain the query associated with the api for retrieving the data from it.
 
-## Learn More
+### `API Call`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+In this application, only one API call is generated and hence the file to retrieve the values is associated in `src/assets/api-call/customer-apicall.js`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Code Flow and Logic of Implementation
+
+`src/index.js` will be the starting point of the program which will eventually render the users page.
+`src/components/display-users.tsx` contains the logic and the render functions.
+
+### `Code Flow`
+
+`userType` -> Tracking the state of the user type the whole component.
+`dataFromCustomerApi` -> Tracking the data from the api (Primary state for mapping purpose also)
+`dataFromCustomerApiClone` -> State for filtering the data in our application
+`fetchCustomers` -> Function to retrieve the data from the api in the initial load.
+`filterData` -> Function to filter the data based on user type in our whole application.
+
+* At the starting point when the page loads up it triggers the `fetchCustomers` method and also fetches the data from the api which is accomplished using the useEffect hook in React.
+* Till the data is fetched it will show `Loading...`
+* After fetching the data, it'll be set into a state and then filtered based on the type of user selected.
+* Selection of the user type is achieved by two-way conditional rendering of the values.
+* Whenever userType state is changed then `filterData` method is called and the data is filtered based on the userType choosen by the user.

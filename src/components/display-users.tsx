@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import customerApiResponse from "../assets/api-call/customer-apicall";
 
+// Declaring the type of a single user
 type DisplayUserType = {
   email: string;
   id: string;
@@ -9,20 +10,22 @@ type DisplayUserType = {
 };
 
 const DisplayUsers = () => {
-  const [userType, setUserType] = useState<string>("ADMIN");
+  const [userType, setUserType] = useState<string>("ADMIN");    // Tracking user type
   const [dataFromCustomerApi, setDataFromCustomerApi] = useState<
     DisplayUserType[]
-  >([]);
+  >([]);  // Tracking the data from API (Primary state)
   const [dataFromCustomerApiClone, setDataFromCustomerApiClone] = useState<
     DisplayUserType[]
-  >([]);
+  >([]);  // Clone for filtering the tracked data
 
+  // Retrieving the data from the api
   const fetchCustomers = async () => {
     const responseFromCustomerApi = await customerApiResponse;
     setDataFromCustomerApiClone(responseFromCustomerApi);
     filterData(responseFromCustomerApi, "ADMIN");
   };
 
+  // Filtering the data based on user type
   const filterData = (customerData: DisplayUserType[], user: string) => {
     const filteredDataUserType = customerData.filter((values) => {
       return values.role === user;
@@ -30,11 +33,15 @@ const DisplayUsers = () => {
     setDataFromCustomerApi(filteredDataUserType);
   };
 
+  // Calling the api on initial load of the component
   useEffect(() => {
     fetchCustomers();
   }, []);
 
-  console.log(dataFromCustomerApi);
+  // Filtering the data when the user type is changed
+  useEffect(() => {
+    filterData(dataFromCustomerApiClone, userType);
+  }, [userType]);
 
   return (
     <>
@@ -53,7 +60,6 @@ const DisplayUsers = () => {
             className="ml-4"
             onChange={() => {
               setUserType("ADMIN");
-              filterData(dataFromCustomerApiClone, "ADMIN");
             }}
           />
           <p className="p-4">Admin</p>
@@ -69,7 +75,6 @@ const DisplayUsers = () => {
             className="ml-4"
             onChange={() => {
               setUserType("MANAGER");
-              filterData(dataFromCustomerApiClone, "MANAGER");
             }}
           />
           <p className="p-4">Manager</p>
