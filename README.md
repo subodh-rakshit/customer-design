@@ -48,10 +48,10 @@ In this application, only one API call is generated and hence the file to retrie
 
 ### `Code Flow`
 
-`userType` -> Tracking the state of the user type the whole component.
-`dataFromCustomerApi` -> Tracking the data from the api (Primary state for mapping purpose also)
-`dataFromCustomerApiClone` -> State for filtering the data in our application
-`fetchCustomers` -> Function to retrieve the data from the api in the initial load.
+`userType` -> Tracking the state of the user type the whole component. \
+`dataFromCustomerApi` -> Tracking the data from the api (Primary state for mapping purpose also). \
+`dataFromCustomerApiClone` -> State for filtering the data in our application. \
+`fetchCustomers` -> Function to retrieve the data from the api in the initial load. \
 `filterData` -> Function to filter the data based on user type in our whole application.
 
 * At the starting point when the page loads up it triggers the `fetchCustomers` method and also fetches the data from the api which is accomplished using the useEffect hook in React.
