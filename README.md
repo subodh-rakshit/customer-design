@@ -59,3 +59,4 @@ In this application, only one API call is generated and hence the file to retrie
 * After fetching the data, it'll be set into a state and then filtered based on the type of user selected.
 * Selection of the user type is achieved by two-way conditional rendering of the values.
 * Whenever userType state is changed then `filterData` method is called and the data is filtered based on the userType choosen by the user.
+* Deployment of the application is done with the help of `Github Pages` which can be easily seen by going into `https://create-react-app.dev/docs/deployment/` link.
