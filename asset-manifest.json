@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/customer-design/static/css/main.eda6a8e8.css",
+    "main.js": "/customer-design/static/js/main.4646a520.js",
+    "index.html": "/customer-design/index.html",
+    "main.eda6a8e8.css.map": "/customer-design/static/css/main.eda6a8e8.css.map",
+    "main.4646a520.js.map": "/customer-design/static/js/main.4646a520.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eda6a8e8.css",
+    "static/js/main.4646a520.js"
+  ]
+}
