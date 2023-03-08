@@ -1,6 +1,6 @@
 # Approach and Setup Guidelines
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). \
 Also for styling and Responsiveness, TailwindCSS is used which can be installed by going into `https://tailwindcss.com/docs/installation` website and following the steps.
 
 ## Available Scripts
