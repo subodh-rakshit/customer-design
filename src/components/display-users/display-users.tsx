@@ -67,7 +67,7 @@ const DisplayUsers = () => {
         return (
           <>
             <div className="flex flex-row">
-              <p>J</p>
+              <p>{values.name.substring(0,1).toUpperCase()}</p>
               <div>
                 <p>{values.name}</p>
                 <p>
